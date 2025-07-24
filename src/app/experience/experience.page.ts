@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { briefcase, calendar, location, checkmarkCircle } from 'ionicons/icons';
+import { briefcase, calendar, location, checkmarkCircle, codeSlash, analyticsOutline, business, create, documentText } from 'ionicons/icons';
 import { ThemeSwitcherComponent } from '../components/theme-switcher/theme-switcher.component';
 
 @Component({
@@ -14,7 +14,7 @@ import { ThemeSwitcherComponent } from '../components/theme-switcher/theme-switc
 export class ExperiencePage implements OnInit {
 
   constructor() {
-    addIcons({ briefcase, calendar, location, checkmarkCircle });
+    addIcons({ briefcase, codeSlash, documentText, business, create, analyticsOutline, calendar, location, checkmarkCircle });
   }
 
   ngOnInit() {

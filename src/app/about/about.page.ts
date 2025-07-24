@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { 
-  flag, 
-  personCircle, 
-  mail, 
-  call, 
-  location, 
-  school, 
-  heart, 
-  codeSlash, 
-  phonePortrait, 
-  trendingUp, 
-  library, 
-  people, 
-  bulb 
+import {
+  flag,
+  personCircle,
+  mail,
+  call,
+  location,
+  school,
+  heart,
+  codeSlash,
+  phonePortrait,
+  trendingUp,
+  library,
+  people,
+  bulb, trophy, medal, musicalNotesOutline, musicalNoteOutline, airplaneOutline
 } from 'ionicons/icons';
 import { ThemeSwitcherComponent } from '../components/theme-switcher/theme-switcher.component';
 
@@ -28,21 +28,7 @@ import { ThemeSwitcherComponent } from '../components/theme-switcher/theme-switc
 export class AboutPage implements OnInit {
 
   constructor() {
-    addIcons({ 
-      flag, 
-      personCircle, 
-      mail, 
-      call, 
-      location, 
-      school, 
-      heart, 
-      codeSlash, 
-      phonePortrait, 
-      trendingUp, 
-      library, 
-      people, 
-      bulb 
-    });
+    addIcons({ flag, personCircle, mail, call, location, school, trophy, medal, codeSlash, people, trendingUp, heart, phonePortrait, library, bulb, musicalNotesOutline, airplaneOutline, musicalNoteOutline });
   }
 
   ngOnInit() {

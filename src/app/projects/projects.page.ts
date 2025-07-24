@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { codeSlash, linkOutline, logoGithub, star, statsChart } from 'ionicons/icons';
+import { codeSlash, linkOutline, logoGithub, star, statsChart, briefcase, globe, qrCode, card, analytics, layers, gitBranch, mail } from 'ionicons/icons';
 import { ThemeSwitcherComponent } from '../components/theme-switcher/theme-switcher.component';
 
 @Component({
@@ -15,7 +15,7 @@ import { ThemeSwitcherComponent } from '../components/theme-switcher/theme-switc
 export class ProjectsPage implements OnInit {
 
   constructor(private router: Router) {
-    addIcons({ codeSlash, linkOutline, logoGithub, star, statsChart });
+    addIcons({ briefcase, globe, logoGithub, qrCode, card, analytics, codeSlash, layers, gitBranch, mail, linkOutline, star, statsChart });
   }
 
   ngOnInit() {
