@@ -1,0 +1,56 @@
+.theme-switcher {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-btn {
+  --background: transparent;
+  --color: var(--portfolio-text-primary);
+  --border-radius: 50%;
+  --padding-start: 8px;
+  --padding-end: 8px;
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    --background: var(--portfolio-bg-card);
+    transform: scale(1.1);
+    box-shadow: var(--portfolio-glow);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.theme-icon {
+  font-size: 1.3rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--portfolio-accent-1);
+  
+  &.rotate {
+    transform: rotate(180deg);
+  }
+}
+
+/* Animation for theme transition */
+:host {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

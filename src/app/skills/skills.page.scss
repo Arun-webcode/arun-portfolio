@@ -1,0 +1,361 @@
+.skills-content {
+  --background: var(--portfolio-bg-primary);
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.skills-hero {
+  padding: 4rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, var(--portfolio-bg-primary) 0%, var(--portfolio-bg-secondary) 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(103, 58, 183, 0.1) 0%, transparent 70%);
+    z-index: -1;
+  }
+}
+
+.skills-hero-content {
+  animation: fadeInUp 1s ease-out;
+}
+
+.skills-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+  }
+}
+
+.skills-subtitle {
+  font-size: 1.3rem;
+  color: var(--portfolio-text-secondary);
+  margin: 0;
+  font-weight: 400;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+}
+
+.skills-categories {
+  margin: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.skill-category {
+  background: var(--portfolio-bg-card);
+  border-radius: 20px;
+  padding: 2.5rem;
+  animation: slideInUp 0.8s ease-out;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--portfolio-shadow);
+  }
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--portfolio-border);
+}
+
+.category-icon {
+  font-size: 2.5rem;
+  color: var(--portfolio-accent-1);
+}
+
+.category-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--portfolio-text-primary);
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
+}
+
+.skills-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.skill-item {
+  background: var(--portfolio-bg-secondary);
+  padding: 1.5rem;
+  border-radius: 15px;
+  border: 1px solid var(--portfolio-border);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(103, 58, 183, 0.1);
+    border-color: var(--portfolio-accent-1);
+    transform: translateX(5px);
+  }
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.skill-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--portfolio-text-primary);
+}
+
+.skill-level {
+  font-size: 0.9rem;
+  color: var(--portfolio-accent-1);
+  font-weight: 500;
+  background: rgba(0, 188, 212, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+}
+
+.skill-bar {
+  height: 8px;
+  background: var(--portfolio-bg-primary);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--portfolio-secondary), var(--portfolio-accent-1));
+  border-radius: 4px;
+  transition: width 2s ease-in-out;
+  position: relative;
+  animation: progressAnimation 2s ease-in-out;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+  }
+}
+
+@keyframes progressAnimation {
+  from {
+    width: 0%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.certifications-section {
+  margin: 4rem 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  justify-content: center;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.section-icon {
+  font-size: 2rem;
+  color: var(--portfolio-accent-1);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--portfolio-text-primary);
+
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+  }
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.certification-card {
+  background: var(--portfolio-bg-card);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--portfolio-shadow);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--portfolio-secondary), var(--portfolio-accent-1));
+  }
+}
+
+.cert-icon {
+  font-size: 3rem;
+  color: var(--portfolio-accent-1);
+  margin-bottom: 1rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.cert-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--portfolio-text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.cert-provider {
+  font-size: 1rem;
+  color: var(--portfolio-text-secondary);
+  margin: 0 0 1.5rem 0;
+  font-weight: 500;
+}
+
+.cert-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(45deg, var(--portfolio-secondary), var(--portfolio-accent-1));
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--portfolio-glow);
+  }
+
+  ion-icon {
+    font-size: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skill-category {
+    padding: 1.5rem;
+  }
+  
+  .category-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .skill-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .skill-level {
+    align-self: flex-end;
+  }
+}
+
+/* Toolbar Styling */
+ion-toolbar {
+  --background: var(--portfolio-bg-secondary);
+  --border-color: var(--portfolio-border);
+}
+
+ion-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+

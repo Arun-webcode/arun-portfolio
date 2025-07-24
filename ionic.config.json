@@ -1,0 +1,7 @@
+{
+  "name": "arun-portfolio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
