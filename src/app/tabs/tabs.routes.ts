@@ -9,32 +9,32 @@ export const routes: Routes = [
       {
         path: 'home',
         loadComponent: () =>
-          import('../home/home.page').then((m) => m.HomePage),
+          import('../pages/home/home.page').then((m) => m.HomePage),
       },
       {
         path: 'about',
         loadComponent: () =>
-          import('../about/about.page').then((m) => m.AboutPage),
+          import('../pages/about/about.page').then((m) => m.AboutPage),
       },
       {
         path: 'experience',
         loadComponent: () =>
-          import('../experience/experience.page').then((m) => m.ExperiencePage),
+          import('../pages/experience/experience.page').then((m) => m.ExperiencePage),
       },
       {
         path: 'projects',
         loadComponent: () =>
-          import('../projects/projects.page').then((m) => m.ProjectsPage),
+          import('../pages/projects/projects.page').then((m) => m.ProjectsPage),
       },
       {
         path: 'skills',
         loadComponent: () =>
-          import('../skills/skills.page').then((m) => m.SkillsPage),
+          import('../pages/skills/skills.page').then((m) => m.SkillsPage),
       },
       {
         path: 'contact',
         loadComponent: () =>
-          import('../contact/contact.page').then((m) => m.ContactPage),
+          import('../pages/contact/contact.page').then((m) => m.ContactPage),
       },
       {
         path: '',

@@ -3,20 +3,22 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { addIcons } from 'ionicons';
-import { 
-  mail, 
-  call, 
-  location, 
-  send, 
-  checkmarkCircle, 
+import {
+  mail,
+  call,
+  location,
+  send,
+  checkmarkCircle,
   alertCircle,
   logoLinkedin,
   logoGithub,
   logoWhatsapp,
-  download
+  download,
+  logoInstagram,
+  logoTwitter
 } from 'ionicons/icons';
-import { ThemeSwitcherComponent } from '../components/theme-switcher/theme-switcher.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { ThemeSwitcherComponent } from 'src/app/components/theme-switcher/theme-switcher.component';
 
 @Component({
   selector: 'app-contact',
@@ -38,31 +40,33 @@ export class ContactPage implements OnInit {
     // Go to script.google.com and create a new project
     // Add the doPost function to handle form submissions
     // Deploy as web app with execute permissions for "Anyone"
-    scriptUrl: 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE',
-    
+    scriptUrl: 'https://script.google.com/macros/s/AKfycbzP0IN-udqNmV3yLehqHn5_NirR0WGXY98iBB0VPmgY4yLbdBphze6huLm5ytouqzHa/exec',
+
     // Step 2: Your Google Sheet ID (from the sheet URL)
     // Example: https://docs.google.com/spreadsheets/d/SHEET_ID_HERE/edit
-    sheetId: 'YOUR_GOOGLE_SHEET_ID_HERE',
-    
+    sheetId: '1Nc4k13HSODuhMZMXG48FgfVsxzN9ChUVNFw3E3iERUA',
+
     // Step 3: Sheet name where data will be stored
-    sheetName: 'Contact_Submissions'
+    sheetName: 'Form Responses 1' // Change this to your actual sheet name
   };
 
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient
   ) {
-    addIcons({ 
-      mail, 
-      call, 
-      location, 
-      send, 
-      checkmarkCircle, 
+    addIcons({
+      mail,
+      call,
+      location,
+      send,
+      checkmarkCircle,
       alertCircle,
       logoLinkedin,
       logoGithub,
       logoWhatsapp,
-      download
+      download,
+      logoInstagram,
+      logoTwitter
     });
 
     this.contactForm = this.formBuilder.group({
@@ -73,7 +77,7 @@ export class ContactPage implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   async onSubmit() {
     if (this.contactForm.valid && !this.isSubmitting) {
@@ -87,23 +91,23 @@ export class ContactPage implements OnInit {
           subject: this.contactForm.value.subject,
           message: this.contactForm.value.message,
           timestamp: new Date().toISOString(),
-          source: 'Portfolio Website'
+          source: 'Form Responses 1'
         };
 
         // Send data to Google Sheets
         await this.submitToGoogleSheets(formData);
-        
+
         this.submitSuccess = true;
         this.submitMessage = 'Thank you! Your message has been sent successfully.';
         this.contactForm.reset();
-        
+
       } catch (error) {
         console.error('Form submission error:', error);
         this.submitSuccess = false;
         this.submitMessage = 'Sorry, there was an error sending your message. Please try again or contact me directly.';
       } finally {
         this.isSubmitting = false;
-        
+
         // Clear message after 5 seconds
         setTimeout(() => {
           this.submitMessage = '';
@@ -115,7 +119,7 @@ export class ContactPage implements OnInit {
   private async submitToGoogleSheets(formData: any): Promise<void> {
     // TODO: Implement Google Sheets submission
     // This method will send form data to your Google Apps Script
-    
+
     /* 
     GOOGLE APPS SCRIPT CODE TO ADD TO YOUR SCRIPT.GOOGLE.COM PROJECT:
     
@@ -154,15 +158,20 @@ export class ContactPage implements OnInit {
     }
     */
 
-    if (!this.GOOGLE_SHEETS_CONFIG.scriptUrl || this.GOOGLE_SHEETS_CONFIG.scriptUrl === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE') {
+    console.log('Sending data to Google Sheets:', formData, this.GOOGLE_SHEETS_CONFIG);
+
+    if (!this.GOOGLE_SHEETS_CONFIG.scriptUrl) {
       throw new Error('Google Sheets integration not configured. Please add your Google Apps Script URL.');
     }
+    const headers = new HttpHeaders({
+      'Content-Type': 'text/plain'
+    });
 
     const response = await this.http.post(this.GOOGLE_SHEETS_CONFIG.scriptUrl, formData, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
+      headers: headers, responseType: 'text'
     }).toPromise();
+    console.log('Google Sheets response:', response);
+
 
     // Return void as expected by the method signature
   }
@@ -170,8 +179,8 @@ export class ContactPage implements OnInit {
   downloadResume() {
     // Create a link element and trigger download
     const link = document.createElement('a');
-    link.href = 'assets/Resume_Arun_Software_Dev.pdf';
-    link.download = 'Arun_Kumar_Resume.pdf';
+    link.href = 'assets/Arun_Resume.pdf';
+    link.download = 'Arun_Resume.pdf';
     link.target = '_blank';
     document.body.appendChild(link);
     link.click();
@@ -187,7 +196,7 @@ export class ContactPage implements OnInit {
   }
 
   openWhatsApp() {
-    window.open('https://wa.me/919315325253', '_blank');
+    window.open('https://api.whatsapp.com/send?phone=919315325253&text=Hi%20Arun%2C%20I%20visited%20your%20site!', '_blank');
   }
 
   sendEmail() {

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { briefcase, calendar, location, checkmarkCircle, codeSlash, analyticsOutline, business, create, documentText } from 'ionicons/icons';
-import { ThemeSwitcherComponent } from '../components/theme-switcher/theme-switcher.component';
+import { ThemeSwitcherComponent } from 'src/app/components/theme-switcher/theme-switcher.component';
 
 @Component({
   selector: 'app-experience',

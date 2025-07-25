@@ -16,7 +16,7 @@ import {
   people,
   bulb, trophy, medal, musicalNotesOutline, musicalNoteOutline, airplaneOutline
 } from 'ionicons/icons';
-import { ThemeSwitcherComponent } from '../components/theme-switcher/theme-switcher.component';
+import { ThemeSwitcherComponent } from 'src/app/components/theme-switcher/theme-switcher.component';
 
 @Component({
   selector: 'app-about',

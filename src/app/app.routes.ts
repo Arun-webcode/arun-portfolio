@@ -7,26 +7,26 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    loadComponent: () => import('./home/home.page').then( m => m.HomePage)
+    loadComponent: () => import('./pages/home/home.page').then(m => m.HomePage)
   },
   {
     path: 'about',
-    loadComponent: () => import('./about/about.page').then( m => m.AboutPage)
+    loadComponent: () => import('./pages/about/about.page').then(m => m.AboutPage)
   },
   {
     path: 'experience',
-    loadComponent: () => import('./experience/experience.page').then( m => m.ExperiencePage)
+    loadComponent: () => import('./pages/experience/experience.page').then(m => m.ExperiencePage)
   },
   {
     path: 'projects',
-    loadComponent: () => import('./projects/projects.page').then( m => m.ProjectsPage)
+    loadComponent: () => import('./pages/projects/projects.page').then(m => m.ProjectsPage)
   },
   {
     path: 'skills',
-    loadComponent: () => import('./skills/skills.page').then( m => m.SkillsPage)
+    loadComponent: () => import('./pages/skills/skills.page').then(m => m.SkillsPage)
   },
   {
     path: 'contact',
-    loadComponent: () => import('./contact/contact.page').then( m => m.ContactPage)
+    loadComponent: () => import('./pages/contact/contact.page').then(m => m.ContactPage)
   },
 ];

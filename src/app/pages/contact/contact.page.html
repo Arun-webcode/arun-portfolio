@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="contact-content">
-  
+
   <div class="contact-container">
     <!-- Hero Section -->
     <div class="contact-hero">
@@ -30,65 +30,33 @@
           <ion-icon name="mail" class="form-icon"></ion-icon>
           <h2 class="form-title">Send Me a Message</h2>
         </div>
-        
+
         <form class="contact-form card-glow" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label for="name" class="form-label">Full Name</label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name" 
-              class="form-input"
-              formControlName="name"
-              required
-              placeholder="Enter your full name"
-            >
+            <input type="text" id="name" name="name" class="form-input" formControlName="name" required
+              placeholder="Enter your full name">
           </div>
 
           <div class="form-group">
             <label for="email" class="form-label">Email Address</label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              class="form-input"
-              formControlName="email"
-              required
-              placeholder="Enter your email address"
-            >
+            <input type="email" id="email" name="email" class="form-input" formControlName="email" required
+              placeholder="Enter your email address">
           </div>
 
           <div class="form-group">
             <label for="subject" class="form-label">Subject</label>
-            <input 
-              type="text" 
-              id="subject" 
-              name="subject" 
-              class="form-input"
-              formControlName="subject"
-              required
-              placeholder="Enter message subject"
-            >
+            <input type="text" id="subject" name="subject" class="form-input" formControlName="subject" required
+              placeholder="Enter message subject">
           </div>
 
           <div class="form-group">
             <label for="message" class="form-label">Message</label>
-            <textarea 
-              id="message" 
-              name="message" 
-              class="form-textarea"
-              formControlName="message"
-              required
-              rows="5"
-              placeholder="Enter your message"
-            ></textarea>
+            <textarea id="message" name="message" class="form-textarea" formControlName="message" required rows="5"
+              placeholder="Enter your message"></textarea>
           </div>
 
-          <button 
-            type="submit" 
-            class="btn-primary form-submit"
-            [disabled]="!contactForm.valid || isSubmitting"
-          >
+          <button type="submit" class="btn-primary form-submit" [disabled]="!contactForm.valid || isSubmitting">
             <ion-icon name="send" slot="start"></ion-icon>
             Send Message
           </button>
@@ -125,7 +93,8 @@
             <ion-icon name="logo-whatsapp" class="contact-card-icon"></ion-icon>
             <h3 class="contact-card-title">WhatsApp</h3>
             <p class="contact-card-value">Quick Chat</p>
-            <a href="https://api.whatsapp.com/send?phone=+919315325253" target="_blank" class="contact-card-action">
+            <a href="https://api.whatsapp.com/send?phone=919315325253&text=Hi%20Arun%2C%20I%20visited%20your%20site!"
+              target="_blank" class="contact-card-action">
               Message
             </a>
           </div>
@@ -150,13 +119,13 @@
               <ion-icon name="logo-github"></ion-icon>
               <span>GitHub</span>
             </a>
-            <a href="mailto:arun.webcode@gmail.com" class="social-link email">
-              <ion-icon name="mail"></ion-icon>
-              <span>Email</span>
+            <a href="https://x.com/Arun8586" target="_blank" class="social-link email">
+              <ion-icon name="logo-twitter"></ion-icon>
+              <span>Twitter</span>
             </a>
-            <a href="https://api.whatsapp.com/send?phone=+919315325253" target="_blank" class="social-link whatsapp">
-              <ion-icon name="logo-whatsapp"></ion-icon>
-              <span>WhatsApp</span>
+            <a href="https://www.instagram.com/arun.webcode/" target="_blank" class="social-link whatsapp">
+              <ion-icon name="logo-instagram"></ion-icon>
+              <span>instagram</span>
             </a>
           </div>
         </div>
@@ -168,7 +137,7 @@
             <h3 class="availability-title">Currently Available</h3>
           </div>
           <p class="availability-text">
-            I'm actively looking for new opportunities and exciting projects. 
+            I'm actively looking for new opportunities and exciting projects.
             Feel free to reach out for collaborations, job opportunities, or just to say hello!
           </p>
           <div class="availability-tags">

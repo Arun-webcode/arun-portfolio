@@ -110,7 +110,8 @@
   margin-bottom: 0.5rem;
 }
 
-.form-input, .form-textarea {
+.form-input,
+.form-textarea {
   width: 100%;
   padding: 1rem;
   background: var(--portfolio-bg-secondary);
@@ -344,7 +345,7 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  
+
   &.available {
     background: #00ff88;
     box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
@@ -395,6 +396,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -406,6 +408,7 @@
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -417,6 +420,7 @@
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -424,10 +428,13 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
     opacity: 1;
   }
+
   50% {
     transform: scale(1.2);
     opacity: 0.8;
@@ -439,15 +446,15 @@
   .contact-cards {
     grid-template-columns: 1fr;
   }
-  
+
   .social-links {
     grid-template-columns: 1fr;
   }
-  
+
   .availability-tags {
     justify-content: center;
   }
-  
+
   .contact-form {
     padding: 1.5rem;
   }
@@ -463,4 +470,3 @@ ion-title {
   font-weight: 600;
   font-size: 1.2rem;
 }
-

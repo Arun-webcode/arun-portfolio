@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { codeSlash, linkOutline, logoGithub, star, statsChart, briefcase, globe, qrCode, card, analytics, layers, gitBranch, mail } from 'ionicons/icons';
-import { ThemeSwitcherComponent } from '../components/theme-switcher/theme-switcher.component';
+import { ThemeSwitcherComponent } from 'src/app/components/theme-switcher/theme-switcher.component';
 
 @Component({
   selector: 'app-projects',

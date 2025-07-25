@@ -176,6 +176,7 @@
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(100%);
   }
@@ -246,6 +247,16 @@
   }
 }
 
+.certification-link {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+
+  ion-icon {
+    cursor: pointer;
+  }
+}
+
 .cert-icon {
   font-size: 3rem;
   color: var(--portfolio-accent-1);
@@ -254,12 +265,19 @@
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(-10px);
   }
+
   60% {
     transform: translateY(-5px);
   }
@@ -308,6 +326,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -319,6 +338,7 @@
     opacity: 0;
     transform: translateY(50px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -330,19 +350,19 @@
   .skill-category {
     padding: 1.5rem;
   }
-  
+
   .category-header {
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
   }
-  
+
   .skill-info {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
-  
+
   .skill-level {
     align-self: flex-end;
   }
@@ -358,4 +378,3 @@ ion-title {
   font-weight: 600;
   font-size: 1.2rem;
 }
-
