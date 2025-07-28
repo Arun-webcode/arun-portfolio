@@ -24,118 +24,31 @@
 
     <!-- Projects Grid -->
     <div class="projects-grid">
-      <!-- Job Portal Project -->
-      <div class="project-card card-glow featured">
+      <div class="project-card card-glow" [class.featured]="project.featured" *ngFor="let project of projects">
         <div class="project-header">
           <div class="project-icon">
-            <ion-icon name="briefcase" class="icon"></ion-icon>
+            <ion-icon [name]="project.icon" class="icon"></ion-icon>
           </div>
-          <div class="project-badge featured-badge">Featured</div>
+          <div class="project-badge featured-badge" *ngIf="project.featured">Featured</div>
         </div>
 
         <div class="project-content">
-          <h3 class="project-title">Job Portal</h3>
-          <p class="project-description">
-            Full-stack MERN application with role-based access that enables job posting,
-            application tracking, and user authentication using secure and scalable architecture.
-          </p>
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
 
           <div class="project-tech">
             <h4 class="tech-title">Tech Stack:</h4>
             <div class="tech-stack">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">Tailwind CSS</span>
-              <span class="tech-tag">React.JS</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">MongoDB</span>
-              <span class="tech-tag">Shadcn-ui</span>
-              <span class="tech-tag">Vite</span>
-              <span class="tech-tag">Cloudinary</span>
+              <span class="tech-tag" *ngFor="let tech of project.techStack">{{ tech }}</span>
             </div>
           </div>
 
           <div class="project-links">
-            <a href="https://jobportal-live.onrender.com/" target="_blank" class="project-link live">
+            <a *ngIf="project.live" [href]="project.live" target="_blank" class="project-link live">
               <ion-icon name="globe" slot="start"></ion-icon>
               Live Demo
             </a>
-            <a href="https://github.com/Arun-webcode/Job-Potal-MERN-Stack" target="_blank" class="project-link github">
-              <ion-icon name="logo-github" slot="start"></ion-icon>
-              GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- QR Code Generator Project -->
-      <div class="project-card card-glow">
-        <div class="project-header">
-          <div class="project-icon">
-            <ion-icon name="qr-code" class="icon"></ion-icon>
-          </div>
-        </div>
-
-        <div class="project-content">
-          <h3 class="project-title">QR Code Generator</h3>
-          <p class="project-description">
-            UI tool developed in React.js for generating customizable QR codes with downloadable output,
-            using optimized frontend components for seamless user experience.
-          </p>
-
-          <div class="project-tech">
-            <h4 class="tech-title">Tech Stack:</h4>
-            <div class="tech-stack">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">Tailwind CSS</span>
-              <span class="tech-tag">React.JS</span>
-              <span class="tech-tag">Vite</span>
-            </div>
-          </div>
-
-          <div class="project-links">
-            <a href="https://qr-generator-webcode.netlify.app/" target="_blank" class="project-link live">
-              <ion-icon name="globe" slot="start"></ion-icon>
-              Live Demo
-            </a>
-            <a href="https://github.com/Arun-webcode/ReactJs-Mini-Projects/tree/main/01-qrcode-gen" target="_blank"
-              class="project-link github">
-              <ion-icon name="logo-github" slot="start"></ion-icon>
-              GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Banking Information System Project -->
-      <div class="project-card card-glow">
-        <div class="project-header">
-          <div class="project-icon">
-            <ion-icon name="card" class="icon"></ion-icon>
-          </div>
-        </div>
-
-        <div class="project-content">
-          <h3 class="project-title">Banking Information System</h3>
-          <p class="project-description">
-            Simulated ATM system with database integration built using object-oriented programming in Java.
-            Features authentication, CRUD account operations, transaction logs, and secure login workflows.
-          </p>
-
-          <div class="project-tech">
-            <h4 class="tech-title">Tech Stack:</h4>
-            <div class="tech-stack">
-              <span class="tech-tag">Java Core</span>
-              <span class="tech-tag">Javax</span>
-              <span class="tech-tag">Swing</span>
-              <span class="tech-tag">AWT</span>
-              <span class="tech-tag">JDBC</span>
-              <span class="tech-tag">MySQL</span>
-              <span class="tech-tag">NetBeans</span>
-            </div>
-          </div>
-
-          <div class="project-links">
-            <a href="https://github.com/Arun-webcode/Upskills-Campus" target="_blank" class="project-link github">
+            <a *ngIf="project.github" [href]="project.github" target="_blank" class="project-link github">
               <ion-icon name="logo-github" slot="start"></ion-icon>
               GitHub
             </a>
@@ -143,6 +56,7 @@
         </div>
       </div>
     </div>
+
 
     <!-- Full Stack Todo App Project -->
     <div class="project-card card-glow">
@@ -202,34 +116,14 @@
       </div>
 
       <div class="stats-grid">
-        <div class="stat-card card-glow">
-          <ion-icon name="code-slash" class="stat-icon"></ion-icon>
-          <h3 class="stat-number text-gradient">3+</h3>
-          <p class="stat-label">Major Projects</p>
-          <p class="stat-description">Full-stack and frontend applications</p>
-        </div>
-
-        <div class="stat-card card-glow">
-          <ion-icon name="layers" class="stat-icon"></ion-icon>
-          <h3 class="stat-number text-gradient">10+</h3>
-          <p class="stat-label">Technologies</p>
-          <p class="stat-description">Modern web development stack</p>
-        </div>
-
-        <div class="stat-card card-glow">
-          <ion-icon name="globe" class="stat-icon"></ion-icon>
-          <h3 class="stat-number text-gradient">2</h3>
-          <p class="stat-label">Live Deployments</p>
-          <p class="stat-description">Production-ready applications</p>
-        </div>
-
-        <div class="stat-card card-glow">
-          <ion-icon name="git-branch" class="stat-icon"></ion-icon>
-          <h3 class="stat-number text-gradient">100%</h3>
-          <p class="stat-label">Open Source</p>
-          <p class="stat-description">Available on GitHub</p>
+        <div class="stat-card card-glow" *ngFor="let stat of stats">
+          <ion-icon [name]="stat.icon" class="stat-icon"></ion-icon>
+          <h3 class="stat-number text-gradient">{{ stat.number }}</h3>
+          <p class="stat-label">{{ stat.label }}</p>
+          <p class="stat-description">{{ stat.description }}</p>
         </div>
       </div>
+
     </div>
 
     <!-- Call to Action -->

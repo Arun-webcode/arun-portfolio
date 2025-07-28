@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
@@ -14,10 +15,10 @@ import {
   logoGithub,
   logoWhatsapp,
   download,
-  logoInstagram,
-  logoTwitter
+  logoTwitter,
+  logoInstagram
 } from 'ionicons/icons';
-import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ThemeSwitcherComponent } from 'src/app/components/theme-switcher/theme-switcher.component';
 
 @Component({
@@ -40,17 +41,18 @@ export class ContactPage implements OnInit {
     // Go to script.google.com and create a new project
     // Add the doPost function to handle form submissions
     // Deploy as web app with execute permissions for "Anyone"
-    scriptUrl: 'https://script.google.com/macros/s/AKfycbzP0IN-udqNmV3yLehqHn5_NirR0WGXY98iBB0VPmgY4yLbdBphze6huLm5ytouqzHa/exec',
+    scriptUrl: 'https://script.google.com/macros/s/AKfycbxlk8KG_7jae9_2YJaK4Y9u7HncSkuHmgIOyt_6aNZxa568e9Xhb5uXbnlpazTFg9Lx/exec',
 
     // Step 2: Your Google Sheet ID (from the sheet URL)
     // Example: https://docs.google.com/spreadsheets/d/SHEET_ID_HERE/edit
-    sheetId: '1Nc4k13HSODuhMZMXG48FgfVsxzN9ChUVNFw3E3iERUA',
+    sheetId: '11Ez17rA1uKt_p20xUIKTEc_tYgMY2Ag6AGUTJh47FMQ',
 
     // Step 3: Sheet name where data will be stored
-    sheetName: 'Form Responses 1' // Change this to your actual sheet name
+    sheetName: 'Sheet1'
   };
 
   constructor(
+    private toastController: ToastController,
     private formBuilder: FormBuilder,
     private http: HttpClient
   ) {
@@ -65,8 +67,8 @@ export class ContactPage implements OnInit {
       logoGithub,
       logoWhatsapp,
       download,
-      logoInstagram,
-      logoTwitter
+      logoTwitter,
+      logoInstagram
     });
 
     this.contactForm = this.formBuilder.group({
@@ -91,7 +93,7 @@ export class ContactPage implements OnInit {
           subject: this.contactForm.value.subject,
           message: this.contactForm.value.message,
           timestamp: new Date().toISOString(),
-          source: 'Form Responses 1'
+          source: 'Portfolio Website'
         };
 
         // Send data to Google Sheets
@@ -117,90 +119,86 @@ export class ContactPage implements OnInit {
   }
 
   private async submitToGoogleSheets(formData: any): Promise<void> {
-    // TODO: Implement Google Sheets submission
-    // This method will send form data to your Google Apps Script
-
-    /* 
-    GOOGLE APPS SCRIPT CODE TO ADD TO YOUR SCRIPT.GOOGLE.COM PROJECT:
-    
-    function doPost(e) {
-      try {
-        // Get the active spreadsheet (replace with your sheet ID)
-        const sheet = SpreadsheetApp.openById('YOUR_GOOGLE_SHEET_ID_HERE').getSheetByName('Contact_Submissions');
-        
-        // Parse the form data
-        const data = JSON.parse(e.postData.contents);
-        
-        // Add headers if this is the first submission
-        if (sheet.getLastRow() === 0) {
-          sheet.getRange(1, 1, 1, 6).setValues([['Timestamp', 'Name', 'Email', 'Subject', 'Message', 'Source']]);
-        }
-        
-        // Add the form data to the sheet
-        sheet.appendRow([
-          data.timestamp,
-          data.name,
-          data.email,
-          data.subject,
-          data.message,
-          data.source
-        ]);
-        
-        return ContentService
-          .createTextOutput(JSON.stringify({success: true, message: 'Data saved successfully'}))
-          .setMimeType(ContentService.MimeType.JSON);
-          
-      } catch (error) {
-        return ContentService
-          .createTextOutput(JSON.stringify({success: false, message: error.toString()}))
-          .setMimeType(ContentService.MimeType.JSON);
-      }
-    }
-    */
-
-    console.log('Sending data to Google Sheets:', formData, this.GOOGLE_SHEETS_CONFIG);
-
     if (!this.GOOGLE_SHEETS_CONFIG.scriptUrl) {
-      throw new Error('Google Sheets integration not configured. Please add your Google Apps Script URL.');
+      console.error('Google Sheets integration not configured. Please add your Google Apps Script URL.');
     }
-    const headers = new HttpHeaders({
-      'Content-Type': 'text/plain'
-    });
 
-    const response = await this.http.post(this.GOOGLE_SHEETS_CONFIG.scriptUrl, formData, {
-      headers: headers, responseType: 'text'
+    const response: any = await this.http.post(this.GOOGLE_SHEETS_CONFIG.scriptUrl, formData, {
+      headers: {
+        'Content-Type': 'text/plain',
+      }
     }).toPromise();
-    console.log('Google Sheets response:', response);
 
+    if (response?.result === 'success') {
+      this.presentToast('✅ Message sent successfully!', 'success');
+    } else {
+      this.presentToast('⚠️ Message not sent. Please try again.', 'warning');
+    }
 
-    // Return void as expected by the method signature
   }
 
-  downloadResume() {
-    // Create a link element and trigger download
-    const link = document.createElement('a');
-    link.href = 'assets/Arun_Resume.pdf';
-    link.download = 'Arun_Resume.pdf';
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
-
-  openLinkedIn() {
-    window.open('https://www.linkedin.com/in/arun-webcode/', '_blank');
-  }
-
-  openGitHub() {
-    window.open('https://github.com/Arun-webcode', '_blank');
-  }
-
-  openWhatsApp() {
-    window.open('https://api.whatsapp.com/send?phone=919315325253&text=Hi%20Arun%2C%20I%20visited%20your%20site!', '_blank');
-  }
-
-  sendEmail() {
-    window.open('mailto:arun.webcode@gmail.com', '_blank');
+  private async presentToast(message: string, color: 'success' | 'warning' | 'danger') {
+    const toast = await this.toastController.create({
+      message,
+      duration: 3000,
+      position: 'bottom',
+      color
+    });
+    toast.present();
   }
 }
 
+// downloadResume() {
+//   // Create a link element and trigger download
+//   const link = document.createElement('a');
+//   link.href = 'assets/Resume_Arun_Software_Dev.pdf';
+//   link.download = 'Arun_Kumar_Resume.pdf';
+//   link.target = '_blank';
+//   document.body.appendChild(link);
+//   link.click();
+//   document.body.removeChild(link);
+// }
+
+
+// paste this code too continue the Google Apps Script function
+// function doPost(e) {
+//   try {
+//     const sheet = SpreadsheetApp.openById('Sheet_Id').getSheetByName('Sheet1'); // sheet1 is sheet name
+//     const data = JSON.parse(e.postData.contents);
+
+//     const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+//     const nextRow = sheet.getLastRow() + 1;
+
+//     const newRow = headers.map(header => {
+//       if (header.toLowerCase() === 'timestamp') {
+//         return new Date(); // insert current date-time
+//       }
+//       return data[header.trim()] || ''; // match header name with formData keys
+//     });
+
+//     sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow]);
+
+//     // Optionally: Email yourself here too
+//     MailApp.sendEmail({
+//       to: "arun.webcode@gmail.com",
+//       subject: "New Contact Message from Portfolio",
+//       htmlBody: `
+//         <b>Name:</b> ${data.name}<br>
+//         <b>Email:</b> ${data.email}<br>
+//         <b>Subject:</b> ${data.subject}<br>
+//         <b>Message:</b> ${data.message}<br>
+//         <b>Timestamp:</b> ${new Date().toString()}<br>
+//         <b>Source:</b> ${data.source}
+//       `
+//     });
+
+//     return ContentService
+//       .createTextOutput(JSON.stringify({ result: 'success', row: nextRow }))
+//       .setMimeType(ContentService.MimeType.JSON);
+
+//   } catch (error) {
+//     return ContentService
+//       .createTextOutput(JSON.stringify({ result: 'error', error: error.toString() }))
+//       .setMimeType(ContentService.MimeType.JSON);
+//   }
+// }

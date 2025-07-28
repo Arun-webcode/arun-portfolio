@@ -1,33 +1,8 @@
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home" href="/tabs/home">
-      <ion-icon aria-hidden="true" name="home"></ion-icon>
-      <ion-label>Home</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="about" href="/tabs/about">
-      <ion-icon aria-hidden="true" name="person"></ion-icon>
-      <ion-label>About</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="experience" href="/tabs/experience">
-      <ion-icon aria-hidden="true" name="briefcase"></ion-icon>
-      <ion-label>Experience</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="projects" href="/tabs/projects">
-      <ion-icon aria-hidden="true" name="code-slash"></ion-icon>
-      <ion-label>Projects</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="skills" href="/tabs/skills">
-      <ion-icon aria-hidden="true" name="build"></ion-icon>
-      <ion-label>Skills</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="contact" href="/tabs/contact">
-      <ion-icon aria-hidden="true" name="mail"></ion-icon>
-      <ion-label>Contact</ion-label>
+    <ion-tab-button *ngFor="let item of tabItems" [tab]="item.tab" [href]="item.href">
+      <ion-icon [name]="item.icon"></ion-icon>
+      <ion-label>{{ item.label }}</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>

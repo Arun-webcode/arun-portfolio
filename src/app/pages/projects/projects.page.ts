@@ -1,3 +1,4 @@
+import { NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonIcon } from '@ionic/angular/standalone';
@@ -10,9 +11,73 @@ import { ThemeSwitcherComponent } from 'src/app/components/theme-switcher/theme-
   templateUrl: './projects.page.html',
   styleUrls: ['./projects.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, ThemeSwitcherComponent]
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, ThemeSwitcherComponent, NgFor, NgIf]
 })
 export class ProjectsPage implements OnInit {
+  stats = [
+    {
+      icon: 'code-slash',
+      number: '3+',
+      label: 'Major Projects',
+      description: 'Full-stack and frontend applications'
+    },
+    {
+      icon: 'layers',
+      number: '10+',
+      label: 'Technologies',
+      description: 'Modern web development stack'
+    },
+    {
+      icon: 'globe',
+      number: '2',
+      label: 'Live Deployments',
+      description: 'Production-ready applications'
+    },
+    {
+      icon: 'git-branch',
+      number: '100%',
+      label: 'Open Source',
+      description: 'Available on GitHub'
+    }
+  ];
+
+  projects = [
+    {
+      title: 'Job Portal',
+      description: 'Full-stack MERN application with role-based access that enables job posting, application tracking, and user authentication using secure and scalable architecture.',
+      icon: 'briefcase',
+      featured: true,
+      techStack: ['HTML', 'Tailwind CSS', 'React.JS', 'Node.js', 'MongoDB', 'Shadcn-ui', 'Vite', 'Cloudinary'],
+      live: 'https://jobportal-live.onrender.com/',
+      github: 'https://github.com/Arun-webcode/Job-Potal-MERN-Stack'
+    },
+    {
+      title: 'QR Code Generator',
+      description: 'UI tool developed in React.js for generating customizable QR codes with downloadable output, using optimized frontend components for seamless user experience.',
+      icon: 'qr-code',
+      featured: false,
+      techStack: ['HTML', 'Tailwind CSS', 'React.JS', 'Vite'],
+      live: 'https://qr-generator-webcode.netlify.app/',
+      github: 'https://github.com/Arun-webcode/ReactJs-Mini-Projects/tree/main/01-qrcode-gen'
+    },
+    {
+      title: 'Banking Information System',
+      description: 'Simulated ATM system with database integration built using object-oriented programming in Java. Features authentication, CRUD account operations, transaction logs, and secure login workflows.',
+      icon: 'card',
+      featured: false,
+      techStack: ['Java Core', 'Javax', 'Swing', 'AWT', 'JDBC', 'MySQL', 'NetBeans'],
+      github: 'https://github.com/Arun-webcode/Upskills-Campus'
+    },
+    // {
+    //   title: 'Full Stack Todo App',
+    //   description: 'A responsive full-stack task management application built with the MEAN stack and Ionic framework. Features include CRUD operations on tasks, secure authentication (login, logout, OTP-based signup, password recovery), and profile updates with image support. Backend is powered by Node.js, Express, and MongoDB, tested using Postman.',
+    //   icon: 'list',
+    //   featured: true,
+    //   techStack: ['Angular', 'Ionic', 'Node.js', 'Express.js', 'MongoDB', 'Postman', 'HTML', 'SCSS', 'TypeScript', 'Netlify', 'Render'],
+    //   github: 'https://github.com/Arun-webcode/todo-app-frontend',
+    //   live: 'https://todo-app-webcode.netlify.app/'
+    // }
+  ];
 
   constructor(private router: Router) {
     addIcons({ briefcase, globe, logoGithub, qrCode, card, analytics, codeSlash, layers, gitBranch, mail, linkOutline, star, statsChart });

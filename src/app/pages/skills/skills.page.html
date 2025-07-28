@@ -20,315 +20,20 @@
       </div>
     </div>
 
-    <!-- Skills Categories -->
     <div class="skills-categories">
-      <!-- Programming Languages -->
-      <div class="skill-category card-glow">
+      <div class="skill-category card-glow" *ngFor="let skill of skills">
         <div class="category-header">
-          <ion-icon name="code" class="category-icon"></ion-icon>
-          <h2 class="category-title">Programming Languages</h2>
+          <ion-icon [name]="skill.icon" class="category-icon"></ion-icon>
+          <h2 class="category-title">{{ skill.category }}</h2>
         </div>
         <div class="skills-grid">
-          <div class="skill-item">
+          <div class="skill-item" *ngFor="let item of skill.items">
             <div class="skill-info">
-              <span class="skill-name">HTML</span>
-              <span class="skill-level">Advanced</span>
+              <span class="skill-name">{{ item.name }}</span>
+              <span class="skill-level">{{ item.level }}</span>
             </div>
             <div class="skill-bar">
-              <div class="skill-progress" style="width: 90%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">CSS</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 85%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">JavaScript</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 85%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">TypeScript</span>
-              <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 75%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Java (Core)</span>
-              <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 70%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Frameworks/Libraries -->
-      <div class="skill-category card-glow">
-        <div class="category-header">
-          <ion-icon name="library" class="category-icon"></ion-icon>
-          <h2 class="category-title">Frameworks/Libraries</h2>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">React.js</span>
-              <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 65%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Angular</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 80%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Ionic</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 80%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Bootstrap</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 85%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Tailwind CSS</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 85%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Shadcn-UI</span>
-              <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 75%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Backend -->
-      <div class="skill-category card-glow">
-        <div class="category-header">
-          <ion-icon name="server" class="category-icon"></ion-icon>
-          <h2 class="category-title">Backend</h2>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Node.js</span>
-              <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 75%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Express.js</span>
-              <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 75%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">MongoDB</span>
-              <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 70%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">REST APIs</span>
-              <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 75%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Developer Tools -->
-      <div class="skill-category card-glow">
-        <div class="category-header">
-          <ion-icon name="construct" class="category-icon"></ion-icon>
-          <h2 class="category-title">Developer Tools</h2>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Git</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 85%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">GitHub</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 85%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">VS Code</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 90%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Postman</span>
-              <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 75%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Agile Methodology</span>
-              <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 70%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Office Tools -->
-      <div class="skill-category card-glow">
-        <div class="category-header">
-          <ion-icon name="document" class="category-icon"></ion-icon>
-          <h2 class="category-title">Office Tools</h2>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">MS Word</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 80%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">MS Excel</span>
-              <span class="skill-level">Intermediate</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 70%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">MS PowerPoint</span>
-              <span class="skill-level">Basics</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 50%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Google Sheets</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 85%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Soft Skills -->
-      <div class="skill-category card-glow">
-        <div class="category-header">
-          <ion-icon name="people" class="category-icon"></ion-icon>
-          <h2 class="category-title">Soft Skills</h2>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Email Writing</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 85%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Documentation</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 80%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Communication</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 85%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">Team Collaboration</span>
-              <span class="skill-level">Advanced</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-progress" style="width: 85%"></div>
+              <div class="skill-progress" [style.width.%]="item.percent"></div>
             </div>
           </div>
         </div>
@@ -341,88 +46,20 @@
         <ion-icon name="ribbon" class="section-icon"></ion-icon>
         <h2 class="section-title">Certifications</h2>
       </div>
+
       <div class="certifications-grid">
-        <div class="certification-card card-glow">
+        <div class="certification-card card-glow" *ngFor="let cert of certifications">
           <div class="certification-link">
-            <a href="https://ninjasfiles.s3.amazonaws.com/certificate30688647ebebf6946e2dd02255f7ec85e3b1d44.pdf"
-              target="_blank">
+            <a [href]="cert.link" target="_blank">
               <ion-icon name="link-outline" class="cert-icon"></ion-icon>
             </a>
           </div>
           <div class="cert-header">
             <ion-icon name="school" class="cert-icon"></ion-icon>
-            <h3 class="cert-title">Frontend Development</h3>
+            <h3 class="cert-title">{{ cert.title }}</h3>
           </div>
-          <p class="cert-issuer">Coding Ninjas</p>
-          <p class="cert-date">2023</p>
-        </div>
-        <div class="certification-card card-glow">
-          <div class="certification-link">
-            <a href="https://ninjasfiles.s3.amazonaws.com/certificate_498f0c80a9972410_dd8ff0d12567d57ab74f207e3fe0ae35.pdf"
-              target="_blank">
-              <ion-icon name="link-outline" class="cert-icon"></ion-icon>
-            </a>
-          </div>
-          <div class="cert-header">
-            <ion-icon name="school" class="cert-icon"></ion-icon>
-            <h3 class="cert-title">Backend Development</h3>
-          </div>
-          <p class="cert-issuer">Coding Ninjas</p>
-          <p class="cert-date">2023</p>
-        </div>
-        <div class="certification-card card-glow">
-          <div class="certification-link">
-            <a href="https://ninjasfiles.s3.amazonaws.com/certificate3068862c91622e08c5321a5c47dfe7cb855efd1.pdf"
-              target="_blank">
-              <ion-icon name="link-outline" class="cert-icon"></ion-icon>
-            </a>
-          </div>
-          <div class="cert-header">
-            <ion-icon name="school" class="cert-icon"></ion-icon>
-            <h3 class="cert-title">Introduction to Java</h3>
-          </div>
-          <p class="cert-issuer">Coding Ninjas</p>
-          <p class="cert-date">2023</p>
-        </div>
-        <div class="certification-card card-glow">
-          <div class="certification-link">
-            <a href="https://ninjasfiles.s3.amazonaws.com/certificate306886350ab77965487e1ee5c601350aa2347a8.pdf"
-              target="_blank">
-              <ion-icon name="link-outline" class="cert-icon"></ion-icon>
-            </a>
-          </div>
-          <div class="cert-header">
-            <ion-icon name="school" class="cert-icon"></ion-icon>
-            <h3 class="cert-title">Data Structures in Java</h3>
-          </div>
-          <p class="cert-issuer">Coding Ninjas</p>
-          <p class="cert-date">2023</p>
-        </div>
-        <div class="certification-card card-glow">
-          <div class="certification-link">
-            <a href="https://www.theiotacademy.co/Certificatepdf/downloadpdfdetails/182" target="_blank">
-              <ion-icon name="link-outline" class="cert-icon"></ion-icon>
-            </a>
-          </div>
-          <div class="cert-header">
-            <ion-icon name="school" class="cert-icon"></ion-icon>
-            <h3 class="cert-title">Java Core Intern</h3>
-          </div>
-          <p class="cert-issuer">Uniconverge Technologies Private Limited</p>
-          <p class="cert-date">2023</p>
-        </div>
-        <div class="certification-card card-glow">
-          <div class="certification-link">
-            <a href="https://lnkd.in/gzwYzpn2" target="_blank">
-              <ion-icon name="link-outline" class="cert-icon"></ion-icon>
-            </a>
-          </div>
-          <div class="cert-header">
-            <ion-icon name="school" class="cert-icon"></ion-icon>
-            <h3 class="cert-title"> CCNA 200-301 Network Fundamentals</h3>
-          </div>
-          <p class="cert-issuer">SimpliLearn</p>
-          <p class="cert-date">2024</p>
+          <p class="cert-issuer">{{ cert.issuer }}</p>
+          <p class="cert-date">{{ cert.date }}</p>
         </div>
       </div>
     </div>
