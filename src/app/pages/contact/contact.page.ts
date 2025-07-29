@@ -143,7 +143,7 @@ export class ContactPage implements OnInit {
       duration: 3000,
       color: color,
       mode: 'ios',
-      position: 'bottom'
+      position: 'top'
     });
     toast.present();
   }
