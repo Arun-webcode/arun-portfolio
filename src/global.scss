@@ -39,22 +39,27 @@
 /* Custom Portfolio Theme Variables */
 :root {
   /* Primary Colors */
-  --portfolio-primary: #000000;        /* Black */
-  --portfolio-secondary: #673AB7;      /* Deep Purple */
-  --portfolio-accent-1: #00BCD4;       /* Cyan */
-  --portfolio-accent-2: #E0E0E0;       /* Light Gray */
-  --portfolio-accent-3: #00FF88;       /* Electric Green */
-  
+  --portfolio-primary: #000000;
+  /* Black */
+  --portfolio-secondary: #673AB7;
+  /* Deep Purple */
+  --portfolio-accent-1: #00BCD4;
+  /* Cyan */
+  --portfolio-accent-2: #E0E0E0;
+  /* Light Gray */
+  --portfolio-accent-3: #00FF88;
+  /* Electric Green */
+
   /* Background Colors */
   --portfolio-bg-primary: #000000;
   --portfolio-bg-secondary: #1a1a1a;
   --portfolio-bg-card: rgba(103, 58, 183, 0.1);
-  
+
   /* Text Colors */
   --portfolio-text-primary: #E0E0E0;
   --portfolio-text-secondary: #B0B0B0;
   --portfolio-text-accent: #00BCD4;
-  
+
   /* Border and Shadow */
   --portfolio-border: rgba(103, 58, 183, 0.3);
   --portfolio-shadow: 0 4px 20px rgba(103, 58, 183, 0.2);
@@ -132,56 +137,60 @@ ion-content {
   box-shadow: var(--portfolio-glow);
 }
 
-
+ion-toast {
+  z-index: 99999 !important;
+  opacity: 1 !important;
+  display: block !important;
+}
 
 /* Theme Transition Styles */
 * {
   transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-              color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Light Theme Specific Styles */
 body[data-theme="light"] {
   background: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%);
-  
+
   /* Light theme scrollbar */
   ::-webkit-scrollbar-track {
     background: #F5F5F5;
   }
-  
+
   ::-webkit-scrollbar-thumb {
     background: #673AB7;
     border-radius: 4px;
   }
-  
+
   ::-webkit-scrollbar-thumb:hover {
     background: #00BCD4;
   }
-  
+
   /* Light theme tab bar */
   ion-tab-bar {
     background: #FFFFFF !important;
     border-top: 1px solid rgba(103, 58, 183, 0.2) !important;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1) !important;
   }
-  
+
   ion-tab-button {
     color: #757575 !important;
   }
-  
+
   ion-tab-button.tab-selected {
     color: #00BCD4 !important;
   }
-  
+
   /* Light theme toolbar */
   ion-toolbar {
     --background: #FFFFFF !important;
     --border-color: rgba(103, 58, 183, 0.2) !important;
     --color: #212121 !important;
   }
-  
+
   /* Light theme content */
   ion-content {
     --background: #FFFFFF !important;
@@ -202,12 +211,12 @@ body[data-theme="light"] {
   align-items: center;
   gap: 8px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: var(--portfolio-glow);
   }
-  
+
   &:active {
     transform: translateY(0);
   }
@@ -225,13 +234,13 @@ body[data-theme="light"] {
   align-items: center;
   gap: 8px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   &:hover {
     background: var(--portfolio-bg-secondary);
     transform: translateY(-2px);
     box-shadow: var(--portfolio-shadow);
   }
-  
+
   &:active {
     transform: translateY(0);
   }
@@ -245,7 +254,7 @@ body[data-theme="light"] {
   padding: 2rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(10px);
-  
+
   &:hover {
     transform: translateY(-5px);
     box-shadow: var(--portfolio-shadow);
@@ -270,14 +279,14 @@ body[data-theme="light"] {
   border-radius: 4px;
   overflow: hidden;
   position: relative;
-  
+
   .progress-fill {
     height: 100%;
     background: linear-gradient(45deg, var(--portfolio-secondary), var(--portfolio-accent-1));
     border-radius: 4px;
     transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    
+
     &::after {
       content: '';
       position: absolute;
@@ -295,13 +304,15 @@ body[data-theme="light"] {
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(100%);
   }
 }
 
 /* Form Styles for Both Themes */
-.form-input, .form-textarea {
+.form-input,
+.form-textarea {
   background: var(--portfolio-bg-secondary);
   border: 2px solid var(--portfolio-border);
   color: var(--portfolio-text-primary);
@@ -309,14 +320,14 @@ body[data-theme="light"] {
   padding: 12px 16px;
   font-size: 1rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   &:focus {
     outline: none;
     border-color: var(--portfolio-accent-1);
     box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.1);
     background: rgba(0, 188, 212, 0.05);
   }
-  
+
   &::placeholder {
     color: var(--portfolio-text-secondary);
   }
@@ -339,6 +350,7 @@ body[data-theme="light"] {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -349,6 +361,7 @@ body[data-theme="light"] {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -360,6 +373,7 @@ body[data-theme="light"] {
     opacity: 0;
     transform: scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -405,15 +419,14 @@ body.light-theme {
     --color-selected: var(--portfolio-accent-1) !important;
     border-top: 1px solid var(--portfolio-border) !important;
   }
-  
+
   ion-tab-button {
     --color: var(--portfolio-text-secondary) !important;
     --color-selected: var(--portfolio-accent-1) !important;
   }
-  
+
   ion-tab-button.tab-selected {
     --color: var(--portfolio-accent-1) !important;
     background: var(--portfolio-bg-card) !important;
   }
 }
-

@@ -138,7 +138,6 @@ export class ContactPage implements OnInit {
   }
 
   async presentToast(message: string, color: 'success' | 'warning' | 'danger') {
-    console.log(message);
     const toast = await this.toastController.create({
       message: message,
       duration: 3000,
