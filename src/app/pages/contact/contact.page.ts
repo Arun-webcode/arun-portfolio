@@ -137,12 +137,13 @@ export class ContactPage implements OnInit {
 
   }
 
-  private async presentToast(message: string, color: 'success' | 'warning' | 'danger') {
+  async presentToast(message: string, color: 'success' | 'warning' | 'danger') {
     const toast = await this.toastController.create({
-      message,
+      message: message,
       duration: 3000,
-      position: 'bottom',
-      color
+      color: color,
+      mode: 'ios',
+      position: 'bottom'
     });
     toast.present();
   }
