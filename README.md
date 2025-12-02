@@ -1,7 +1,7 @@
 # Arun Kumar - Angular Ionic Portfolio
 
 ## 🚀 Live Demo
-**URL:** [View Portfolio](https://4200-iz9w9xn9p3u3kca71qum7-98a1ed13.manusvm.computer)
+**URL:** [View Portfolio](https://portfolio-arun-webcode.netlify.app)
 
 ---
 
@@ -47,16 +47,6 @@ An animated, impactful, and fully responsive portfolio built with **Angular 18+*
 - **Dark Theme:** Purple/Cyan on black
 - **Light Theme:** Dark text on clean white
 - **Tech:** RxJS observable theme service, standalone component
-
----
-
-## 📞 Contact Integration
-- **Email:** [arun.webcode@gmail.com](mailto:arun.webcode@gmail.com)
-- **Phone:** [9315325253](tel:+919315325253)
-- **Location:** Faridabad, Haryana
-- **Social Links:** LinkedIn, GitHub, Email, WhatsApp
-
----
 
 ## 🗂️ File Structure
 ```
