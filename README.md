@@ -1,7 +1,7 @@
 # Arun Kumar - Angular Ionic Portfolio
 
 ## 🚀 Live Demo
-**URL:** [View Portfolio](https://4200-iz9w9xn9p3u3kca71qum7-98a1ed13.manusvm.computer)
+**URL:** [View Portfolio](https://portfolio-arun-webcode.netlify.app)
 
 ---
 
