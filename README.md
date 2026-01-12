@@ -48,16 +48,6 @@ An animated, impactful, and fully responsive portfolio built with **Angular 18+*
 - **Light Theme:** Dark text on clean white
 - **Tech:** RxJS observable theme service, standalone component
 
----
-
-## 📞 Contact Integration
-- **Email:** [arun.webcode@gmail.com](mailto:arun.webcode@gmail.com)
-- **Phone:** [9315325253](tel:+919315325253)
-- **Location:** Faridabad, Haryana
-- **Social Links:** LinkedIn, GitHub, Email, WhatsApp
-
----
-
 ## 🗂️ File Structure
 ```
 arun-portfolio/

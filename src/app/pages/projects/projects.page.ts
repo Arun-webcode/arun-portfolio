@@ -43,13 +43,13 @@ export class ProjectsPage implements OnInit {
 
   projects = [
     {
-      title: 'Job Portal',
-      description: 'Full-stack MERN application with role-based access that enables job posting, application tracking, and user authentication using secure and scalable architecture.',
+      title: 'Seeker India (Job Portal)',
+      description: 'A robust, scalable Job Portal with a Node.js/Express backend and Angular 19 frontend. Features role-based access, secure JWT/Google Auth, real-time updates via Socket.io, and Cloudinary file handling.',
       icon: 'briefcase',
       featured: true,
-      techStack: ['HTML', 'Tailwind CSS', 'React.JS', 'Node.js', 'MongoDB', 'Shadcn-ui', 'Vite', 'Cloudinary'],
-      live: 'https://jobportal-live.onrender.com/',
-      github: 'https://github.com/Arun-webcode/Job-Potal-MERN-Stack'
+      techStack: ['Angular 19', 'Tailwind CSS', 'Node.js', 'Express.js v5', 'MongoDB', 'Socket.io', 'Cloudinary', 'TypeScript'],
+      live: 'https://seekerindia.netlify.app/',
+      github: ''
     },
     {
       title: 'QR Code Generator',
