@@ -1,0 +1,432 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import '@ionic/angular/css/palettes/dark.system.css';
+
+/* Custom Portfolio Theme Variables */
+:root {
+  /* Primary Colors */
+  --portfolio-primary: #000000;
+  /* Black */
+  --portfolio-secondary: #673AB7;
+  /* Deep Purple */
+  --portfolio-accent-1: #00BCD4;
+  /* Cyan */
+  --portfolio-accent-2: #E0E0E0;
+  /* Light Gray */
+  --portfolio-accent-3: #00FF88;
+  /* Electric Green */
+
+  /* Background Colors */
+  --portfolio-bg-primary: #000000;
+  --portfolio-bg-secondary: #1a1a1a;
+  --portfolio-bg-card: rgba(103, 58, 183, 0.1);
+
+  /* Text Colors */
+  --portfolio-text-primary: #E0E0E0;
+  --portfolio-text-secondary: #B0B0B0;
+  --portfolio-text-accent: #00BCD4;
+
+  /* Border and Shadow */
+  --portfolio-border: rgba(103, 58, 183, 0.3);
+  --portfolio-shadow: 0 4px 20px rgba(103, 58, 183, 0.2);
+  --portfolio-glow: 0 0 20px rgba(0, 188, 212, 0.3);
+}
+
+/* Global Portfolio Styles */
+body {
+  background: linear-gradient(135deg, var(--portfolio-primary) 0%, var(--portfolio-bg-secondary) 100%);
+  color: var(--portfolio-text-primary);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--portfolio-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--portfolio-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--portfolio-accent-1);
+}
+
+/* Ionic Component Overrides for Dark Theme */
+ion-tab-bar {
+  background: var(--portfolio-bg-secondary) !important;
+  border-top: 1px solid var(--portfolio-border) !important;
+}
+
+ion-tab-button {
+  color: var(--portfolio-text-secondary) !important;
+}
+
+ion-tab-button.tab-selected {
+  color: var(--portfolio-accent-1) !important;
+}
+
+ion-content {
+  --background: var(--portfolio-bg-primary);
+}
+
+/* Utility Classes */
+.text-gradient {
+  background: linear-gradient(45deg, var(--portfolio-secondary), var(--portfolio-accent-1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-glow {
+  box-shadow: var(--portfolio-glow);
+  border: 1px solid var(--portfolio-border);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, var(--portfolio-secondary), var(--portfolio-accent-1));
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--portfolio-glow);
+}
+
+ion-toast {
+  z-index: 99999 !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+/* Theme Transition Styles */
+* {
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light Theme Specific Styles */
+body[data-theme="light"] {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%);
+
+  /* Light theme scrollbar */
+  ::-webkit-scrollbar-track {
+    background: #F5F5F5;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #673AB7;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00BCD4;
+  }
+
+  /* Light theme tab bar */
+  ion-tab-bar {
+    background: #FFFFFF !important;
+    border-top: 1px solid rgba(103, 58, 183, 0.2) !important;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  ion-tab-button {
+    color: #757575 !important;
+  }
+
+  ion-tab-button.tab-selected {
+    color: #00BCD4 !important;
+  }
+
+  /* Light theme toolbar */
+  ion-toolbar {
+    --background: #FFFFFF !important;
+    --border-color: rgba(103, 58, 183, 0.2) !important;
+    --color: #212121 !important;
+  }
+
+  /* Light theme content */
+  ion-content {
+    --background: #FFFFFF !important;
+    --color: #212121 !important;
+  }
+}
+
+/* Enhanced Button Styles for Both Themes */
+.btn-primary {
+  background: linear-gradient(45deg, var(--portfolio-secondary), var(--portfolio-accent-1));
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--portfolio-glow);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-secondary {
+  background: var(--portfolio-bg-card);
+  color: var(--portfolio-text-primary);
+  border: 1px solid var(--portfolio-border);
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background: var(--portfolio-bg-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--portfolio-shadow);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* Card Styles for Both Themes */
+.card-glow {
+  background: var(--portfolio-bg-card);
+  border: 1px solid var(--portfolio-border);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--portfolio-shadow);
+    border-color: var(--portfolio-accent-1);
+  }
+}
+
+/* Text Gradient Styles */
+.text-gradient {
+  background: linear-gradient(45deg, var(--portfolio-secondary), var(--portfolio-accent-1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* Progress Bar Styles for Both Themes */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--portfolio-bg-secondary);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(45deg, var(--portfolio-secondary), var(--portfolio-accent-1));
+    border-radius: 4px;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: shimmer 2s infinite;
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Form Styles for Both Themes */
+.form-input,
+.form-textarea {
+  background: var(--portfolio-bg-secondary);
+  border: 2px solid var(--portfolio-border);
+  color: var(--portfolio-text-primary);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:focus {
+    outline: none;
+    border-color: var(--portfolio-accent-1);
+    box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.1);
+    background: rgba(0, 188, 212, 0.05);
+  }
+
+  &::placeholder {
+    color: var(--portfolio-text-secondary);
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-up {
+  animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scale-in {
+  animation: scaleIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* Tab Bar Theme Switching */
+ion-tab-bar {
+  --background: var(--portfolio-bg-primary) !important;
+  --color: var(--portfolio-text-secondary) !important;
+  --color-selected: var(--portfolio-accent-1) !important;
+  border-top: 1px solid var(--portfolio-border) !important;
+  transition: all 0.3s ease !important;
+}
+
+ion-tab-button {
+  --color: var(--portfolio-text-secondary) !important;
+  --color-selected: var(--portfolio-accent-1) !important;
+  --background: transparent !important;
+  transition: all 0.3s ease !important;
+}
+
+ion-tab-button.tab-selected {
+  --color: var(--portfolio-accent-1) !important;
+  background: var(--portfolio-bg-card) !important;
+  border-radius: 12px 12px 0 0 !important;
+  margin: 0 4px !important;
+}
+
+ion-tab-button:hover {
+  --color: var(--portfolio-accent-1) !important;
+  background: var(--portfolio-bg-card) !important;
+  border-radius: 12px 12px 0 0 !important;
+  margin: 0 4px !important;
+}
+
+/* Light theme specific tab bar styles */
+body.light-theme {
+  ion-tab-bar {
+    --background: var(--portfolio-bg-primary) !important;
+    --color: var(--portfolio-text-secondary) !important;
+    --color-selected: var(--portfolio-accent-1) !important;
+    border-top: 1px solid var(--portfolio-border) !important;
+  }
+
+  ion-tab-button {
+    --color: var(--portfolio-text-secondary) !important;
+    --color-selected: var(--portfolio-accent-1) !important;
+  }
+
+  ion-tab-button.tab-selected {
+    --color: var(--portfolio-accent-1) !important;
+    background: var(--portfolio-bg-card) !important;
+  }
+}

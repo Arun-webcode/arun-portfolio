@@ -1,0 +1,73 @@
+<ion-header [translucent]="true" class="transparent-header">
+  <ion-toolbar class="transparent-toolbar">
+    <ion-title class="text-gradient">
+      Arun Kumar - Portfolio
+    </ion-title>
+    <div slot="end" class="navbar-actions">
+      <app-theme-switcher></app-theme-switcher>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="home-content">
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-container">
+      <!-- Profile Image -->
+      <div class="profile-container">
+        <img src="assets/Arun.png" alt="Arun Kumar" class="profile-image">
+        <div class="profile-glow"></div>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="text-gradient">Arun Kumar</span>
+        </h1>
+        <h2 class="hero-subtitle">
+          Full Stack Developer & Web Enthusiast
+        </h2>
+        <p class="hero-description">
+          Passionate about building responsive web applications with MEAN stack and modern web technologies.
+          Currently working as a Full Stack Developer Intern at SarvM.AI, creating innovative digital solutions.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-actions">
+          <button class="btn-primary" (click)="navigateToProjects()">
+            <ion-icon name="code-slash" slot="start"></ion-icon>
+            View Projects
+          </button>
+          <button class="btn-secondary" (click)="navigateToContact()">
+            <ion-icon name="mail" slot="start"></ion-icon>
+            Get In Touch
+          </button>
+          <a href="assets/Arun_Resume.pdf" download="Arun_Kumar_Resume.pdf" class="resume-download">
+            <ion-icon name="download" slot="start"></ion-icon>
+            Download Resume
+          </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+          <a *ngFor="let link of socialLinks" [href]="link.url" target="_blank" class="social-link"
+            [attr.aria-label]="link.name">
+            <ion-icon [name]="link.icon"></ion-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- stats.component.html -->
+  <div class="stats-section">
+    <div class="stats-container">
+      <div class="stat-item" *ngFor="let stat of stats">
+        <h3 class="stat-number text-gradient">{{ stat.number }}</h3>
+        <p class="stat-label">{{ stat.label }}</p>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

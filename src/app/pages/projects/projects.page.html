@@ -1,0 +1,144 @@
+<ion-header [translucent]="true" class="transparent-header">
+  <ion-toolbar class="transparent-toolbar">
+    <ion-title class="text-gradient">Projects</ion-title>
+    <div slot="end" class="navbar-actions">
+      <app-theme-switcher></app-theme-switcher>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="projects-content">
+
+  <div class="projects-container">
+    <!-- Hero Section -->
+    <div class="projects-hero">
+      <div class="projects-hero-content">
+        <h1 class="projects-title">
+          <span class="text-gradient">My Projects</span>
+        </h1>
+        <p class="projects-subtitle">
+          Showcasing my development skills through real-world applications
+        </p>
+      </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      <div class="project-card card-glow" [class.featured]="project.featured" *ngFor="let project of projects">
+        <div class="project-header">
+          <div class="project-icon">
+            <ion-icon [name]="project.icon" class="icon"></ion-icon>
+          </div>
+          <div class="project-badge featured-badge" *ngIf="project.featured">Featured</div>
+        </div>
+
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+
+          <div class="project-tech">
+            <h4 class="tech-title">Tech Stack:</h4>
+            <div class="tech-stack">
+              <span class="tech-tag" *ngFor="let tech of project.techStack">{{ tech }}</span>
+            </div>
+          </div>
+
+          <div class="project-links">
+            <a *ngIf="project.live" [href]="project.live" target="_blank" class="project-link live">
+              <ion-icon name="globe" slot="start"></ion-icon>
+              Live Demo
+            </a>
+            <a *ngIf="project.github" [href]="project.github" target="_blank" class="project-link github">
+              <ion-icon name="logo-github" slot="start"></ion-icon>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Full Stack Todo App Project -->
+    <div class="project-card card-glow">
+      <div class="project-content">
+        <div class="project-header">
+          <h3 class="project-title text-gradient">Full Stack Todo App</h3>
+          <div class="project-status">
+            <span class="status-badge featured">Featured</span>
+          </div>
+        </div>
+
+        <div class="project-body">
+          <p class="project-description">
+            A responsive full-stack task management application built with the MEAN stack and Ionic framework,
+            focused on clean and impactful UI/UX design. Allows users to perform CRUD operations on tasks,
+            along with secure authentication features including login, logout, OTP-based signup, and password recovery.
+            Users can update profile information including name and profile picture. Backend uses Node.js, Express,
+            and MongoDB, tested via Postman.
+          </p>
+
+          <div class="project-tech">
+            <h4 class="tech-title">Tech Stack:</h4>
+            <div class="tech-stack">
+              <span class="tech-tag">Angular</span>
+              <span class="tech-tag">Ionic</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Express.js</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">Postman</span>
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">SCSS</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Netlify</span>
+              <span class="tech-tag">Render</span>
+            </div>
+          </div>
+
+          <div class="project-links">
+            <a href="https://todo-app-webcode.netlify.app/" target="_blank" class="project-link live">
+              <ion-icon name="globe" slot="start"></ion-icon>
+              Live Demo
+            </a>
+            <a href="https://github.com/Arun-webcode/todo-app-frontend" target="_blank" class="project-link github">
+              <ion-icon name="logo-github" slot="start"></ion-icon>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Stats Section -->
+    <div class="project-stats-section">
+      <div class="section-header">
+        <ion-icon name="analytics" class="section-icon"></ion-icon>
+        <h2 class="section-title">Project Highlights</h2>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card card-glow" *ngFor="let stat of stats">
+          <ion-icon [name]="stat.icon" class="stat-icon"></ion-icon>
+          <h3 class="stat-number text-gradient">{{ stat.number }}</h3>
+          <p class="stat-label">{{ stat.label }}</p>
+          <p class="stat-description">{{ stat.description }}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta-section">
+      <div class="cta-content">
+        <h2 class="cta-title">Interested in My Work?</h2>
+        <p class="cta-description">
+          Let's discuss how I can contribute to your next project with my development skills and passion for creating
+          innovative solutions.
+        </p>
+        <button class="btn-primary cta-button" (click)="navigateToContact()">
+          <ion-icon name="mail" slot="start"></ion-icon>
+          Get In Touch
+        </button>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,85 @@
+<ion-header [translucent]="true" class="transparent-header">
+  <ion-toolbar class="transparent-toolbar">
+    <ion-title class="text-gradient">Skills</ion-title>
+    <div slot="end" class="navbar-actions">
+      <app-theme-switcher></app-theme-switcher>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="skills-content">
+
+  <div class="skills-container">
+    <!-- Hero Section -->
+    <div class="skills-hero">
+      <div class="skills-hero-content">
+        <h1 class="hero-title text-gradient">Technical Skills</h1>
+        <p class="skills-subtitle">
+          My technical expertise and proficiency levels
+        </p>
+      </div>
+    </div>
+
+    <div class="skills-categories">
+      <div class="skill-category card-glow" *ngFor="let skill of skills">
+        <div class="category-header">
+          <ion-icon [name]="skill.icon" class="category-icon"></ion-icon>
+          <h2 class="category-title">{{ skill.category }}</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-item" *ngFor="let item of skill.items">
+            <div class="skill-info">
+              <span class="skill-name">{{ item.name }}</span>
+              <span class="skill-level">{{ item.level }}</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" [style.width.%]="item.percent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications Section -->
+    <div class="certifications-section">
+      <div class="section-header">
+        <ion-icon name="ribbon" class="section-icon"></ion-icon>
+        <h2 class="section-title">Certifications</h2>
+      </div>
+
+      <div class="certifications-grid">
+        <div class="certification-card card-glow" *ngFor="let cert of certifications">
+          <div class="certification-link">
+            <a [href]="cert.link" target="_blank">
+              <ion-icon name="link-outline" class="cert-icon"></ion-icon>
+            </a>
+          </div>
+          <div class="cert-header">
+            <ion-icon name="school" class="cert-icon"></ion-icon>
+            <h3 class="cert-title">{{ cert.title }}</h3>
+          </div>
+          <p class="cert-issuer">{{ cert.issuer }}</p>
+          <p class="cert-date">{{ cert.date }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Languages Section -->
+    <div class="languages-section">
+      <div class="section-header">
+        <ion-icon name="language" class="section-icon"></ion-icon>
+        <h2 class="section-title">Languages</h2>
+      </div>
+      <div class="languages-grid">
+        <div class="language-item card-glow">
+          <h3 class="language-name">Hindi</h3>
+          <p class="language-level">Native</p>
+        </div>
+        <div class="language-item card-glow">
+          <h3 class="language-name">English</h3>
+          <p class="language-level">Professional</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
