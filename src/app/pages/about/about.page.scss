@@ -235,6 +235,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -274,3 +275,54 @@ ion-title {
   padding-right: 1rem;
 }
 
+/* Achievements Section Styles */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.achievement-card {
+  background: var(--portfolio-bg-card);
+  padding: 1.5rem;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  height: 100%;
+  border: 1px solid var(--portfolio-border);
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--portfolio-shadow);
+    border-color: var(--portfolio-accent-1);
+    background: var(--portfolio-bg-secondary);
+  }
+}
+
+.achievement-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.achievement-icon {
+  font-size: 2rem;
+  color: var(--portfolio-accent-1);
+}
+
+.achievement-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--portfolio-text-primary);
+  margin: 0;
+}
+
+.achievement-description {
+  font-size: 1rem;
+  color: var(--portfolio-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}

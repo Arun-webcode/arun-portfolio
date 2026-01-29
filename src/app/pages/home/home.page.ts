@@ -13,14 +13,81 @@ import {
   download
 } from 'ionicons/icons';
 import { ThemeSwitcherComponent } from 'src/app/components/theme-switcher/theme-switcher.component';
+import { NgParticlesModule } from 'ng-particles';
+import { type Engine, MoveDirection, OutMode } from "tsparticles-engine";
+import { loadSlim } from "tsparticles-slim";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, ThemeSwitcherComponent, NgFor]
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, ThemeSwitcherComponent, NgFor, NgParticlesModule]
 })
 export class HomePage implements OnInit {
+  particlesId = "tsparticles";
+  particlesOptions: any = {
+    background: {
+      color: {
+        value: "transparent",
+      },
+    },
+    fpsLimit: 120,
+    fullScreen: {
+      enable: false
+    },
+    interactivity: {
+      events: {
+        resize: true,
+      },
+    },
+    particles: {
+      color: {
+        value: ["#ffffff", "#FFD700"],
+      },
+      move: {
+        direction: MoveDirection.none,
+        enable: true,
+        outModes: OutMode.out,
+        random: true,
+        speed: 0.5,
+        straight: false,
+      },
+      number: {
+        density: {
+          enable: true,
+          area: 800,
+        },
+        value: 150,
+      },
+      opacity: {
+        value: { min: 0.1, max: 1 },
+        animation: {
+          enable: true,
+          speed: 1,
+          sync: false
+        }
+      },
+      shape: {
+        type: "circle",
+      },
+      size: {
+        value: { min: 1, max: 3 },
+      },
+      links: {
+        enable: false,
+      },
+    },
+    detectRetina: true,
+  };
+
+  async particlesInit(engine: any): Promise<void> {
+    await loadSlim(engine);
+  }
+
+  async particlesLoaded(container: any): Promise<void> {
+    // console.log(container);
+  }
+
   stats: { number: string; label: string }[] = [];
   socialLinks = [
     {

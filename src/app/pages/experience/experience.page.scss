@@ -167,6 +167,27 @@
   margin-bottom: 1.5rem;
 }
 
+/* Transparent Header Styles */
+.transparent-header {
+  --background: transparent;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--portfolio-border);
+}
+
+.transparent-toolbar {
+  --background: rgba(0, 0, 0, 0.1);
+  --color: var(--portfolio-text-primary);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--portfolio-border);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
 .job-title {
   font-size: 1.5rem;
   font-weight: 600;

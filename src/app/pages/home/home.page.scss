@@ -295,48 +295,17 @@ ion-title {
   padding-right: 1rem;
 }
 
-/* Galaxy Background Effect */
-.home-content {
-  position: relative;
-  overflow: hidden;
-}
-
-.home-content::before {
-  content: '';
+/* Particles Background */
+.particles-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background:
-    radial-gradient(2px 2px at 20px 30px, var(--portfolio-accent-1), transparent),
-    radial-gradient(2px 2px at 40px 70px, var(--portfolio-secondary), transparent),
-    radial-gradient(1px 1px at 90px 40px, var(--portfolio-accent-3), transparent),
-    radial-gradient(1px 1px at 130px 80px, var(--portfolio-accent-1), transparent),
-    radial-gradient(2px 2px at 160px 30px, var(--portfolio-secondary), transparent);
-  background-repeat: repeat;
-  background-size: 200px 100px;
-  animation: galaxyMove 20s linear infinite;
-  opacity: 0.3;
   z-index: 0;
-  pointer-events: none;
 }
 
-@keyframes galaxyMove {
-  0% {
-    transform: translateX(0) translateY(0);
-  }
 
-  100% {
-    transform: translateX(-200px) translateY(-100px);
-  }
-}
-
-/* Hover effect for galaxy movement */
-.home-content:hover::before {
-  animation-duration: 5s;
-  opacity: 0.6;
-}
 
 /* Ensure content is above the galaxy background */
 .hero-section,

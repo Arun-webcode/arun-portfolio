@@ -10,6 +10,8 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="home-content">
+  <ng-particles [id]="particlesId" class="particles-background" [options]="particlesOptions"
+    (particlesLoaded)="particlesLoaded($event)" (particlesInit)="particlesInit($event)"></ng-particles>
 
   <!-- Hero Section -->
   <div class="hero-section">
@@ -30,7 +32,8 @@
         </h2>
         <p class="hero-description">
           Passionate about building responsive web applications with MEAN stack and modern web technologies.
-          Currently working as a Full Stack Developer Intern at SarvM.AI, creating innovative digital solutions.
+          Completed Full Stack Developer Internship at SarvM.AI, and currently seeking full-time opportunities to apply
+          and grow my skills.
         </p>
 
         <!-- CTA Buttons -->

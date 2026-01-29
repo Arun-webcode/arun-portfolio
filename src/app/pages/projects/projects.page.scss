@@ -79,7 +79,7 @@
 
   &.featured {
     border: 2px solid var(--portfolio-accent-1);
-    
+
     &::before {
       content: '';
       position: absolute;
@@ -379,6 +379,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -390,6 +391,7 @@
     opacity: 0;
     transform: translateY(50px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -397,10 +399,13 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
     opacity: 1;
   }
+
   50% {
     transform: scale(1.05);
     opacity: 0.8;
@@ -418,3 +423,23 @@ ion-title {
   font-size: 1.2rem;
 }
 
+/* Transparent Header Styles */
+.transparent-header {
+  --background: transparent;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--portfolio-border);
+}
+
+.transparent-toolbar {
+  --background: rgba(0, 0, 0, 0.1);
+  --color: var(--portfolio-text-primary);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--portfolio-border);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 1rem;
+}

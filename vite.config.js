@@ -5,6 +5,9 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 4200,
     allowedHosts: 'all'
+  },
+  optimizeDeps: {
+    exclude: ['ng-particles', 'tsparticles-engine', 'tsparticles-slim']
   }
 });
 
